@@ -1,8 +1,9 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { FC } from "react";
 import { StarIcon, MapPinIcon } from "react-native-heroicons/solid";
+import { urlFor } from "../sanity";
 interface props {
-  id: number;
+  id: string;
   imgUrl: string;
   title: string;
   rating: number;
@@ -16,7 +17,10 @@ interface props {
 const RestaurantCard: FC<props> = (props) => {
   return (
     <TouchableOpacity className="bg-white mr-3 shadow-sm">
-      <Image source={{ uri: props.imgUrl }} className="w-64 h-36 rounded-sm" />
+      <Image
+        source={{ uri: urlFor(props.imgUrl).url() }}
+        className="w-64 h-36 rounded-sm"
+      />
       <View className="px-3 pb-4">
         <Text className="font-bold text-lg pt-2">{props.title}</Text>
         <View className="flex-row items-center space-x-1">
