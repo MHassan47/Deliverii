@@ -35,11 +35,6 @@ const Categories = () => {
             title={category.name}
           />
         ))}
-      {/* <CategoriesCard imgUrl="https://links.papareact.com/gn7" title="second" />
-      <CategoriesCard imgUrl="https://links.papareact.com/gn7" title="second" />
-      <CategoriesCard imgUrl="https://links.papareact.com/gn7" title="second" />
-      <CategoriesCard imgUrl="https://links.papareact.com/gn7" title="second" />
-      <CategoriesCard imgUrl="https://links.papareact.com/gn7" title="second" /> */}
     </ScrollView>
   );
 };
