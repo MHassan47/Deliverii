@@ -9,7 +9,9 @@ const CategoriesCard: FC<props> = ({ imgUrl, title }) => {
   return (
     <TouchableOpacity>
       <Image source={{ uri: imgUrl }} className="h-20 w-20 rounded" />
-      <Text>{title}</Text>
+      <Text className="absolute bottom-1 left-1 text-white text-lg">
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 };
