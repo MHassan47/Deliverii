@@ -13,6 +13,7 @@ import {
   useNavigation,
 } from "@react-navigation/native";
 import { urlFor } from "../sanity";
+import DishRow from "../components/DishRow";
 
 interface props {
   id: string;
@@ -22,9 +23,18 @@ interface props {
   genre: string;
   address: string;
   shortDescription: string;
-  dishes: string[];
+  dishes: Dish[];
   long: number;
   lat: number;
+}
+
+interface Dish {
+  key: string;
+  _id: string;
+  name: string;
+  short_description: string;
+  price: number;
+  image: string;
 }
 
 type ScreenRouteProp = RouteProp<ParamListBase, string> & {
@@ -86,6 +96,19 @@ const RestaurantScreen = () => {
         </View>
         <View>
           <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
+
+          {/* Dish rows */}
+          {params.dishes &&
+            params.dishes.map((dish: Dish) => (
+              <DishRow
+                key={dish._id}
+                id={dish._id}
+                name={dish.name}
+                description={dish.short_description}
+                price={dish.price}
+                image={dish.image}
+              />
+            ))}
         </View>
       </View>
     </ScrollView>
