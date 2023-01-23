@@ -29,7 +29,7 @@ const BasketIcon = () => {
           {items.length}
         </Text>
         <Text className="text-lg text-white font-extrabold">
-          ${parseFloat(basketTotal).toFixed(2)}
+          ${Math.round(basketTotal).toFixed(2)}
         </Text>
       </TouchableOpacity>
     </View>
