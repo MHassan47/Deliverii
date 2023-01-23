@@ -18,7 +18,7 @@ import BasketIcon from "../components/BasketIcon";
 import { RootStackParams } from "../App";
 import { useDispatch } from "react-redux";
 import { setRestaurant } from "../redux/features/restaurantSlice";
-interface props {
+export interface Restaurant {
   id: string;
   imgUrl: string;
   title: string;
