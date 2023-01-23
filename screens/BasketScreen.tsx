@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { RouteProp, useNavigation } from "@react-navigation/native";
 import { useSelector, useDispatch } from "react-redux";
 import { selectRestaurant } from "../redux/features/restaurantSlice";
 import {
@@ -12,9 +12,16 @@ import { Item } from "../redux/features/basketSlice";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { XCircleIcon } from "react-native-heroicons/solid";
 import { urlFor } from "../sanity";
+import { RootStackParams } from "../App";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+type basketScreenNavigationType = NativeStackNavigationProp<
+  RootStackParams,
+  "Basket"
+>;
 
 const BasketScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<basketScreenNavigationType>();
   const restaurant = useSelector(selectRestaurant);
   const basketTotal = useSelector(selectBasketTotal);
   const items = useSelector(selectBasketItems);
@@ -48,7 +55,7 @@ const BasketScreen = () => {
           </View>
           <TouchableOpacity
             className="rounded-full bg-gray-100 absolute top-3 right-5"
-            onPress={() => navigation.goBack}
+            onPress={navigation.goBack}
           >
             <XCircleIcon color="#00CCBB" height={50} width={50} />
           </TouchableOpacity>
@@ -108,7 +115,10 @@ const BasketScreen = () => {
               ${Math.round(basketTotal + 3.99).toFixed(2)}
             </Text>
           </View>
-          <TouchableOpacity className="w-full p-4 bg-[#00CCBB] rounded-lg">
+          <TouchableOpacity
+            className="w-full p-4 bg-[#00CCBB] rounded-lg"
+            onPress={() => navigation.navigate("Preparing")}
+          >
             <Text className="text-center text-white text-xl font-bold">
               Place Order
             </Text>
