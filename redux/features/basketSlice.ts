@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { State } from "../store";
 
 export interface BasketSlice {
   items: Item[];
@@ -41,12 +42,12 @@ export const basketSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { addToBasket, removeFromBasket } = basketSlice.actions;
 
-export const selectBasketItems = (state: any) => state.basket.items;
+export const selectBasketItems = (state: State) => state.basket.items;
 
-export const selectBasketItemsWithId = (state: any, id: string) =>
+export const selectBasketItemsWithId = (state: State, id: string) =>
   state.basket.items.filter((item: Item) => item.id === id);
 
-export const selectBasketTotal = (state: any) =>
+export const selectBasketTotal = (state: State) =>
   state.basket.items.reduce(
     (total: number, item: Item) => (total += item.price),
     0
