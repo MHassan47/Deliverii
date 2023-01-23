@@ -3,6 +3,9 @@ import React, { FC } from "react";
 import { StarIcon, MapPinIcon } from "react-native-heroicons/solid";
 import { urlFor } from "../sanity";
 import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParams } from "../App";
+import { Dish } from "../screens/RestaurantScreen";
 interface props {
   id: string;
   imgUrl: string;
@@ -11,10 +14,15 @@ interface props {
   genre: string;
   address: string;
   shortDescription: string;
-  dishes: string[];
+  dishes: Dish[];
   long: number;
   lat: number;
 }
+
+type RestaurantScreenNavigationType = NativeStackNavigationProp<
+  RootStackParams,
+  "Home"
+>;
 const RestaurantCard: FC<props> = ({
   id,
   imgUrl,
@@ -27,7 +35,7 @@ const RestaurantCard: FC<props> = ({
   long,
   lat,
 }) => {
-  const navigation: any = useNavigation();
+  const navigation = useNavigation<RestaurantScreenNavigationType>();
   const handlePress = () => {
     navigation.navigate("Restaurant", {
       id,

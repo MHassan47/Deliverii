@@ -15,6 +15,7 @@ import {
 import { urlFor } from "../sanity";
 import DishRow from "../components/DishRow";
 import BasketIcon from "../components/BasketIcon";
+import { RootStackParams } from "../App";
 
 interface props {
   id: string;
@@ -29,7 +30,7 @@ interface props {
   lat: number;
 }
 
-interface Dish {
+export interface Dish {
   key: string;
   _id: string;
   name: string;
@@ -38,13 +39,24 @@ interface Dish {
   image: string;
 }
 
-type ScreenRouteProp = RouteProp<ParamListBase, string> & {
-  params: props;
-};
+type restaurantScreenRouteType = RouteProp<RootStackParams, "Restaurant">;
 
 const RestaurantScreen = () => {
-  const route = useRoute<ScreenRouteProp>();
-  const { params } = route;
+  const {
+    params: {
+      id,
+      imgUrl,
+      title,
+      rating,
+      genre,
+      address,
+      shortDescription,
+      dishes,
+      long,
+      lat,
+    },
+  } = useRoute<restaurantScreenRouteType>();
+
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
@@ -58,7 +70,7 @@ const RestaurantScreen = () => {
         {/* <Text>{params.title}</Text> */}
         <View className="relative">
           <Image
-            source={{ uri: urlFor(params.imgUrl).url() }}
+            source={{ uri: urlFor(imgUrl).url() }}
             className="w-full h-56 bg-gray-300 p-4"
           />
           <TouchableOpacity
@@ -70,26 +82,21 @@ const RestaurantScreen = () => {
         </View>
         <View>
           <View className="bg-white">
-            <Text className="text-3xl">{params.title}</Text>
+            <Text className="text-3xl">{title}</Text>
             <View className="flex-row space-x-2 my-1">
               <View className="flex-row items-center space-x-1">
                 <StarIcon color="green" opacity={0.5} size={22} />
                 <Text className="text-xs text-gray-500">
-                  <Text className="text-green-500">{params.rating}</Text> ·{" "}
-                  {params.genre}
+                  <Text className="text-green-500">{rating}</Text> · {genre}
                 </Text>
               </View>
 
               <View className="flex-row items-center space-x-1">
                 <MapPinIcon color="gray" opacity={0.5} size={22} />
-                <Text className="text-xs text-gray-500">
-                  Nearby · {params.genre}
-                </Text>
+                <Text className="text-xs text-gray-500">Nearby · {genre}</Text>
               </View>
             </View>
-            <Text className="text-gray-500 mt-2 pb-4">
-              {params.shortDescription}
-            </Text>
+            <Text className="text-gray-500 mt-2 pb-4">{shortDescription}</Text>
             <TouchableOpacity className="flex-row items-center space-x-2 p-4 border-y border-gray-300">
               <QuestionMarkCircleIcon color="gray" />
               <Text className="font-bold flex-1">Have a food allergy?</Text>
@@ -100,8 +107,8 @@ const RestaurantScreen = () => {
             <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
 
             {/* Dish rows */}
-            {params.dishes &&
-              params.dishes.map((dish: Dish) => (
+            {dishes &&
+              dishes.map((dish: Dish) => (
                 <DishRow
                   key={dish._id}
                   id={dish._id}
