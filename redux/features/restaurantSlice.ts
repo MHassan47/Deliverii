@@ -3,7 +3,7 @@ import { Dish } from "../../screens/RestaurantScreen";
 import { State } from "../store";
 
 export interface RestaurantSlice {
-  restaurant: Restaurant[];
+  restaurant: Restaurant;
 }
 
 export interface Restaurant {
