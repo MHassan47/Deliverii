@@ -22,12 +22,13 @@ const BasketIcon = () => {
   return (
     <View className="absolute bottom-10 w-full z-50">
       <TouchableOpacity
-        className="mx-5 bg-[#00CCBB] p-4 rounded-lg flex-row"
+        className="mx-5 bg-[#00CCBB] p-4 rounded-lg flex-row justify-between items-center"
         onPress={() => navigation.navigate("Basket")}
       >
-        <Text className="text-white font-extrabold text-lg bg-[#01a296]">
+        <Text className="text-white font-extrabold text-lg bg-[#01a296] p-2">
           {items.length}
         </Text>
+        <Text className="text-lg text-white font-extrabold">View Basket</Text>
         <Text className="text-lg text-white font-extrabold">
           ${Math.round(basketTotal).toFixed(2)}
         </Text>
