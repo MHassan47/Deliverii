@@ -32,7 +32,11 @@ export default function App() {
       <Provider store={store}>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Restaurant" component={RestaurantScreen} />
+          <Stack.Screen
+            name="Restaurant"
+            component={RestaurantScreen}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Basket"
             component={BasketScreen}
