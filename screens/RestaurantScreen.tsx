@@ -95,11 +95,11 @@ const RestaurantScreen = () => {
         </View>
         <View>
           <View className="bg-white">
-            <Text className="text-3xl">{title}</Text>
-            <View className="flex-row space-x-2 my-1">
+            <Text className="text-3xl pl-2">{title}</Text>
+            <View className="flex-row space-x-2 my-1 pl-2">
               <View className="flex-row items-center space-x-1">
                 <StarIcon color="green" opacity={0.5} size={22} />
-                <Text className="text-xs text-gray-500">
+                <Text className="text-xs text-gray-500 pl-2">
                   <Text className="text-green-500">{rating}</Text> · {genre}
                 </Text>
               </View>
@@ -109,7 +109,9 @@ const RestaurantScreen = () => {
                 <Text className="text-xs text-gray-500">Nearby · {genre}</Text>
               </View>
             </View>
-            <Text className="text-gray-500 mt-2 pb-4">{shortDescription}</Text>
+            <Text className="text-gray-500 mt-2 pb-4 pl-2">
+              {shortDescription}
+            </Text>
             <TouchableOpacity className="flex-row items-center space-x-2 p-4 border-y border-gray-300">
               <QuestionMarkCircleIcon color="gray" />
               <Text className="font-bold flex-1">Have a food allergy?</Text>
