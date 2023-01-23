@@ -7,14 +7,16 @@ export interface RestaurantSlice {
 }
 
 export interface Restaurant {
-  id: string | null;
-  imgUrl: string | null;
-  title: string | null;
-  rating: number | null;
-  genre: string | null;
-  address: string | null;
-  short_description: string | null;
-  dishes: Dish[] | null;
+  id: string;
+  imgUrl: string;
+  title: string;
+  rating: number;
+  genre: string;
+  address: string;
+  short_description: string;
+  dishes: Dish[];
+  lat: number;
+  long: number;
 }
 
 const initialState = {
@@ -27,6 +29,8 @@ const initialState = {
     address: null,
     short_description: null,
     dishes: null,
+    lat: null,
+    long: null,
   },
 };
 
