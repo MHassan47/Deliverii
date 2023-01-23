@@ -9,6 +9,7 @@ import {
   selectBasketItemsWithId,
   removeFromBasket,
 } from "../redux/features/basketSlice";
+import { State } from "../redux/store";
 interface props {
   key: string;
   id: string;
@@ -21,7 +22,9 @@ interface props {
 const DishRow: FC<props> = ({ id, name, description, price, image }) => {
   const [isPressed, setIsPressed] = useState(false);
   const dispatch = useDispatch();
-  const items = useSelector((state) => selectBasketItemsWithId(state, id));
+  const items = useSelector((state: State) =>
+    selectBasketItemsWithId(state, id)
+  );
 
   const addItemToBasket = () => {
     dispatch(addToBasket({ id, name, description, price, image }));
