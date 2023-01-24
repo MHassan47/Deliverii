@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from "react";
 import { ArrowRightIcon } from "react-native-heroicons/outline";
 import RestaurantCard from "./RestaurantCard";
 import client from "../sanity";
+import { Dish } from "../screens/RestaurantScreen";
 
 interface props {
   id: string;
@@ -19,7 +20,7 @@ interface Restaurants {
   genre: string;
   address: string;
   short_description: string;
-  dishes: string[];
+  dishes: Dish[];
   long: number;
   lat: number;
 }
