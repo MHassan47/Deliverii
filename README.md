@@ -6,10 +6,10 @@ A mobile food courier app that allows users to add to cart, edit cart and checko
 
 React Native · TypeScript · Redux · Sanity.io · TailWindCSS
 
-<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_home.JPG?raw=true" width="275" height="600" >
-<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_basket.JPG?raw=true" width="275" height="600">
-<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_loading.JPG?raw=true" width="275" height="600">
-<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_delivery.JPG?raw=true" width="275" height="600" >
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_home.JPG?raw=true" style="float:left; width:20%; margin-right:5%;">
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_basket.JPG?raw=true" style="float:left; width:20%;  margin-right:5%;">
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_loading.JPG?raw=true" style="float:left; width:20%;  margin-right:5%;">
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_delivery.JPG?raw=true" style="float:left; width:20%;  margin-right:5%;">
 
 ### Clone repo
 
