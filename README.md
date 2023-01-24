@@ -6,10 +6,10 @@ A mobile food courier app that allows users to add to cart, edit cart and checko
 
 React Native · TypeScript · Redux · Sanity.io · TailWindCSS
 
-![deliverii_home](https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_home.JPG?raw=true)
-![deliverii_basket](https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_basket.JPG?raw=true)
-![deliverii_loading](https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_loading.JPG?raw=true)
-![deliverii_delivery](https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_delivery.JPG?raw=true)
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_home.JPG?raw=true" width="275" height="600" >
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_basket.JPG?raw=true" width="275" height="600">
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_loading.JPG?raw=true" width="275" height="600">
+<img src="https://github.com/MHassan47/Deliverii/blob/master/assets/deliverii_delivery.JPG?raw=true" width="275" height="600" >
 
 ### Clone repo
 
