@@ -4,7 +4,7 @@ A mobile food courier app that allows users to add/edit cart and checkout!
 
 ## Tech Stack
 
-React Native · TypeScript · Redux · Sanity.io · TailWindCSS
+React Native · TypeScript · Redux · TailWindCSS · Sanity.io
 
 https://user-images.githubusercontent.com/98605431/214203092-84d87cb9-b681-498a-b3b5-bfd1a3bb7840.MOV
 
