@@ -1,6 +1,6 @@
 # Deliverii
 
-A mobile food courier app that allows users to add/edit cart and checkout!
+A mobile food courier app that allows users to add/edit cart and checkout.
 
 ## Tech Stack
 
